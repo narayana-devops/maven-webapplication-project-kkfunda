@@ -46,7 +46,7 @@
 <body>
 
 <header>
-    <h1>🚀 Welcome to satyam SRE Portal 🚀</h1>
+    <marquee>🚀 Welcome to SATYAM SRE Portal 🚀</marquee>
     <h3>Training | Development | Consulting</h3>
 </header>
 
