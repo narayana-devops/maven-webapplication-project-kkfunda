@@ -46,7 +46,7 @@
 <body>
 
 <header>
-    <marquee>🚀 Welcome to SATYAM SRE Portal 🚀</marquee>
+    <marquee>🚀 Welcome to sonarqube SRE Portal 🚀</marquee>
     <h3>Training | Development | Consulting</h3>
 </header>
 
