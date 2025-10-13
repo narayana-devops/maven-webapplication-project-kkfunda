@@ -1,0 +1,24 @@
+node {
+def mvn = tool name:"3.9.11"
+
+stage('git checkout')
+{
+git branch: 'jenkins', url: 'https://github.com/narayana-devops/maven-webapplication-project-kkfunda.git'
+
+}
+
+stage('Maven Build')
+
+{
+sh "$(mvn}/bin mvn clean package"
+}
+stage('Maven Sonar Report')
+{
+sh "$(mvn}/bin mvn sonar:sonar"
+}
+stage('Backup the artifactory to nexus')
+{
+sh "$(mvn}/bin mvn deploy"
+}
+
+}
