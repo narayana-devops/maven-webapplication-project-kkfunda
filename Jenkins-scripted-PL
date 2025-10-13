@@ -20,5 +20,12 @@ stage('Backup the artifactory to nexus')
 {
 sh "${mvn}/bin/mvn deploy"
 }
-
+stage('Deploy into tomcat')
+{
+sh ***
+curl -u admin:password \
+--upload-file /var/lib/jenkins/workspace/pipline/target/maven-web-application.war \
+"http://3.109.2.100:9090/manager/text/deploy?path=/maven-web-application&update=true"
+***
+}
 }
