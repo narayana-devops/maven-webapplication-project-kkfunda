@@ -10,15 +10,15 @@ git branch: 'jenkins', url: 'https://github.com/narayana-devops/maven-webapplica
 stage('Maven Build')
 
 {
-sh "$(mvn}/bin mvn clean package"
+sh "${mvn}/bin mvn clean package"
 }
 stage('Maven Sonar Report')
 {
-sh "$(mvn}/bin mvn clean package sonar:sonar"
+sh "${mvn}/bin mvn clean package sonar:sonar"
 }
 stage('Backup the artifactory to nexus')
 {
-sh "$(mvn}/bin mvn deploy"
+sh "${mvn}/bin mvn deploy"
 }
 
 }
