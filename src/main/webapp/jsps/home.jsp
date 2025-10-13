@@ -46,7 +46,7 @@
 <body>
 
 <header>
-    <marquee>🚀 Welcome to DEVOPS DECLARETIVE PL  TESTING Portal 🚀</marquee>
+    <marquee>🚀 Welcome to DEVOPS DECLARETIVE PL from SCM(GIT) TESTING Portal 🚀</marquee>
     <h3>Training | Development | Consulting</h3>
 </header>
 
