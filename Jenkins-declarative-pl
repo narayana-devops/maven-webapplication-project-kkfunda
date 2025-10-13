@@ -1,0 +1,44 @@
+pipeline
+{
+tools{
+    maven "3.9.11"
+}
+agent any
+stages{
+  stage('git checkout') 
+  {
+      steps {
+          git branch: 'jenkins', url: 'https://github.com/narayana-devops/maven-webapplication-project-kkfunda.git'
+      }
+  }
+      stage('Maven Build')
+      {
+          steps{
+              sh "mvn  package"
+          }
+          
+      } //stage "maven" ending
+   stage('SQ Report')
+   {
+       steps{
+           sh "mvn sonar:sonar"
+       }
+   } // SQ ending
+       stage('Nexus upload')
+       {
+           steps{
+               sh "mvn deploy"
+                }
+       } //nexus ending
+      stage('Tomcat deploy')
+      {
+          steps{
+              sh """
+              curl -u admin:password \
+              --upload-file /var/lib/jenkins/workspace/pipeline-declarative/target/maven-web-application.war \
+              "http://3.109.158.58:8080/manager/text/deploy?path=/maven-web-application&update=true"
+                """
+          }
+      } //tomcat end
+} //stages ending
+} //pipeline ending
